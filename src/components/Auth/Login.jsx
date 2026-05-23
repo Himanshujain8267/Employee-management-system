@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaLock } from 'react-icons/fa';
 
-const Login = () => {
+const Login = ({ handleLogin }) => {
 
   
   const [email, setEmail] = useState('');
@@ -16,13 +16,7 @@ const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log("Email:", email);
-    console.log("Password:", password);
-
-    alert(`
-      Email: ${email}
-      Password: ${password}
-    `);
+  handleLogin(email, password) ;
   };
 
   return (
