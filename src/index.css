@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+
+/* 
+make text white and large size
+*/
+*{
+  color: #fff;
+}
+body{
+  background-color: #111;
+}
+
+#tasklist::-webkit-scrollbar{
+  display: none;
+}
