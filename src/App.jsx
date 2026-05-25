@@ -28,6 +28,7 @@ const handleLogin = (email,password) => {
 
 if(email == 'admin@me.com' && password == '123') {
   setUser('admin') ;
+  setLoggedInUser(authData.admin[0]) ;
   localStorage.setItem('loggedInUser',JSON.stringify({role:'admin'})) ;
 }
 else if(authData ){
@@ -47,7 +48,7 @@ const data = useContext(AuthContext) ;
    <>
    
   {!user ? <Login handleLogin={handleLogin}/>:''}
-{user === 'admin' ? <AdminDashboard/> : user === 'employee' ? <EmployeeDashboard data={loggedInUser}/> : null}
+{user === 'admin' ? <AdminDashboard data={loggedInUser}/> : user === 'employee' ? <EmployeeDashboard data={loggedInUser}/> : null}
    
    </>
   )
