@@ -3,8 +3,8 @@ import Header from '../Others/Header';
 import TaskListNumbers from '../TaskList/TaskListNumbers';
 import TaskList from '../TaskList/TaskList';
 
-const EmployeeDashboard = () => {
-
+const EmployeeDashboard = ({data}) => {
+  
 
 
     let [name,setName] = React.useState("Himanshu Jain") ;
@@ -14,7 +14,8 @@ const EmployeeDashboard = () => {
     let [failed,setFailed] = React.useState(1) ;
   return (
     <div className='p-10 bg-[#1C1C1C] h-screen'>
-<Header/>
+      <h1>{data.id}</h1>
+<Header data={data}/>
 <TaskListNumbers/>
 <TaskList/>
 </div>
